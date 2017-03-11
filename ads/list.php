@@ -33,7 +33,7 @@
         подключиться к MySQL" . mysql_error());
       mysql_set_charset (utf8);
       $result = mysql_query ("SELECT * FROM ads ORDER BY `ads`.`id` DESC",$link);
-
+      $num_rows = mysql_num_rows($result);
     ?>
     <br>
     <div class="container">
@@ -48,6 +48,9 @@
       <br>
       <div class="row">
         <div class="col-xs-12">
+            <div>
+                <?php echo "<p>Всего объявлений: $num_rows</p>" ?>
+            </div>
           <table class="table table-bordered">
             <?php
             while(($row=mysql_fetch_array($result))!==false) {

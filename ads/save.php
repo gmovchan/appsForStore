@@ -32,12 +32,13 @@
       mysql_select_db($dbAd, $link) or die("Не удалось
         подключиться к MySQL" . mysql_error());
       mysql_set_charset (utf8);
-      $name = htmlspecialchars($_POST['name']);
+      $name = htmlspecialchars($_POST['name']);     
+      $descriptionTop = htmlspecialchars($_POST['descriptionTop']);
       $description = htmlspecialchars($_POST['description']);
       $date = date("o\-m\-d");
       $sku = htmlspecialchars($_POST['sku']);
       $id = $_GET['id'];
-      mysql_query ("UPDATE `host6597_ad`.`ads` SET `name` = '$name', `sku` = '$sku', `description` = '$description', `date` = '$date' WHERE `ads`.`id` = '$id'",$link);
+      mysql_query ("UPDATE `host6597_ad`.`ads` SET `name` = '$name', `description_top` = '$descriptionTop', `sku` = '$sku', `description` = '$description', `date` = '$date' WHERE `ads`.`id` = '$id'",$link);
       mysql_close($link);
     ?>
     <br>
