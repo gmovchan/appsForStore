@@ -36,7 +36,6 @@
       $result = mysql_fetch_assoc(mysql_query ("SELECT * FROM ads  WHERE id
         = $id",$link));
       $name = $result["name"];
-      $descriptionTop = $result["description_top"];
       $description = $result["description"];
       $sku = $result["sku"];
     ?>
@@ -58,34 +57,6 @@
                   <input type="text" name="name" value="<?php
                     echo $name;
                   ?>">
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-2">
-                <label for="">
-                  Оформление
-                </label>
-              </div>
-              <div class="col-xs-10">
-                <p>
-                  <button type="button" class="btn btn-default" id="btnBoldTop">
-                    <span class="glyphicon glyphicon-bold" aria-hidden="true"></span>
-                  </button>
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-2">
-                <label for="">
-                  Текст объявления
-                </label>
-              </div>
-              <div class="col-xs-10">
-                <p>
-                  <textarea name="descriptionTop" rows="10" cols="80" id="mytextareaTop"><?php
-                    echo $descriptionTop;
-                  ?></textarea>
                 </p>
               </div>
             </div>

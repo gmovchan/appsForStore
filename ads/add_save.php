@@ -33,16 +33,12 @@
       mysql_select_db($dbAd, $link) or die("Не удалось
         подключиться к MySQL" . mysql_error());
       mysql_set_charset (utf8);
-      
-      // FIXME: бесполезно пользоваться функцией htmlspecialchars, надо переписать код
-      // на подготавливаемые запросы, а ее использовать не для сохранения, а для вывода в вид
       $name = htmlspecialchars($_POST['name']);
       $description = htmlspecialchars($_POST['description']);
-      $descriptionTop = htmlspecialchars($_POST['descriptionTop']);
       $date = date("o\-m\-d");
       $sku = htmlspecialchars($_POST['sku']);
-      mysql_query ("INSERT INTO `host6597_ad`.`ads` (`id`, `name`, `description_top`, `sku`,
-        `description`, `date`) VALUES (NULL, '$name', '$descriptionTop', '$sku', '$description', '$date')"
+      mysql_query ("INSERT INTO `host6597_ad`.`ads` (`id`, `name`, `sku`,
+        `description`, `date`) VALUES (NULL, '$name', '$sku', '$description', '$date')"
         ,$link);
       mysql_close($link);
     ?>
