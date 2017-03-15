@@ -84,7 +84,7 @@
                   = $productId;", $link));
                 $productName = $productDescription['name'];
 
-                echo "<p>".trim($productName)." - ".$price." руб. </p>";
+                echo "<p>&lt;strong&gt;".trim($productName)." - ".$price." руб. &lt;/strong&gt;</p>";
               }
               echo "<p>".nl2br(trim($descriptionAd))."</p>";
                 mysql_close($link);

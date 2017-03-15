@@ -71,7 +71,7 @@
                   <input type="text" name="sku" value="<?php
                     echo $sku;
                   ?>">
-                  <i>вводить через запятую</i>
+                  <i>разделйте артикулы пробелами</i>
                 </p>
               </div>
             </div>

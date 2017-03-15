@@ -36,7 +36,13 @@
       $name = htmlspecialchars($_POST['name']);
       $description = htmlspecialchars($_POST['description']);
       $date = date("o\-m\-d");
+	  // данный хак с заменой пробелов на запятые применяется потому что изначально требовалось вводить данные, 
+	  // разделенные запятыми, а не пробелами. Так как а БД тысячи запсией, где артикулы разделены запятыми
+	  // то разбиваются в массив они потом именно по ним
       $sku = htmlspecialchars($_POST['sku']);
+	  $sku = explode(' ', $sku);
+	  $sku = implode(',', $sku);
+	  
       mysql_query ("INSERT INTO `host6597_ad`.`ads` (`id`, `name`, `sku`,
         `description`, `date`) VALUES (NULL, '$name', '$sku', '$description', '$date')"
         ,$link);

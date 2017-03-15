@@ -56,7 +56,7 @@
                   </div>
                   <div class="col-xs-10">
 
-                      <input class="form-control" type="text" name="sku" value="" placeholder="вводить через запятую">
+                      <input class="form-control" type="text" name="sku" value="" placeholder="разделйте артикулы пробелами">
 
                   </div>
                 </div>
